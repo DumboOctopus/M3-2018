@@ -11,7 +11,8 @@ import itertools
 def calculate_cost(amount, distance):
     # .37 dollar/ton/mile (truck) according to our source
     # 341 is the average cost per calorie for our food types
-    return 0.37 * distance * amount * 341/1609
+    print amount, distance/1609
+    return 0.37 * distance * amount * 341/1609.0
 
 
 distance_dp = {}
@@ -23,12 +24,13 @@ def getDistance(county_a, county_b):
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
 
-deficit_counties_copy = c.execute("SELECT county, net FROM county_net_food WHERE net < 0").fetchall()
+# retrieve stuff from db
+deficit_counties_copy = sorted(c.execute("SELECT county, net FROM county_net_food WHERE net < 0").fetchall(), key=lambda a: a[1])
 excess_counties_copy = c.execute("SELECT county, net FROM county_net_food WHERE net > 0").fetchall()
-
 for records in c.execute("SELECT county_a, county_b, distance FROM county_county_distance").fetchall():
     distance_dp[records[0] + records[1]] = int(records[2])
     distance_dp[records[1] + records[0]] = int(records[2])
+
 
 # this is our temporary ones we can manipulate for this permutation's calculations
 food_in_deficit_counties = dict(deficit_counties_copy)
@@ -76,7 +78,7 @@ for deficit_county in deficit_counties_copy:
             # we took all the food, we must remove the county from the list
             # so it doesn't go back to this one ever again.
             food_in_excess_counties.pop(county_e)
-        print food_in_deficit_counties[county_d]
+        #print food_in_deficit_counties[county_d]
 
 print cost
-print matching_data
+#print matching_data
