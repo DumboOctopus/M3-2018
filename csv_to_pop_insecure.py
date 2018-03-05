@@ -4,7 +4,7 @@ import csv
 import sqlite3
 
 # open the database for storing our data
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('data_texas.db')
 c = conn.cursor()
 
 # opens the county_insecure csv file.

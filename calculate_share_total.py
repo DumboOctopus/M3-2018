@@ -11,8 +11,8 @@ import itertools
 def calculate_cost(amount, distance):
     # .37 dollar/ton/mile (truck) according to our source
     # 341 is the average cost per calorie for our food types
-    print amount, distance/1609
-    return 0.37 * distance * amount * 341/1609.0
+    print amount, distance
+    return 0.37 * distance * amount * 341
 
 
 distance_dp = {}
@@ -21,7 +21,7 @@ def getDistance(county_a, county_b):
 
 
 # open the database for storing our data
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('data_texas.db')
 c = conn.cursor()
 
 # retrieve stuff from db

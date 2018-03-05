@@ -1,7 +1,7 @@
 import sqlite3
 
 # open the database for storing our data
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('data_texas.db')
 c = conn.cursor()
 
 f = open("W values", "w")

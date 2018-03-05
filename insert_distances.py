@@ -3,7 +3,7 @@
 import sqlite3
 
 # open the database for storing our data
-conn = sqlite3.connect('data.db')
+conn = sqlite3.connect('data_texas.db')
 c = conn.cursor()
 
 # opens the county_insecure csv file.
@@ -20,7 +20,7 @@ with open('Texas_County_Distances.txt') as file:
         tmp = tmp[1].split(" : ")
         county_b = tmp[0].replace(" County", "")
         # the distance is given as floats but we want integers because its not that percise
-        distance = int(float(tmp[1]))
+        distance = int(float(tmp[1])/1609)
 
         query = ("INSERT INTO county_county_distance (county_a, county_b, distance) VALUES('{}', '{}', {})".format(county_a, county_b, distance))
         # print out the query for checking for errors.
