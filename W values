@@ -53,10 +53,10 @@ Crane   194313.0
 Crockett   906794.0
 Crosby   2062635.0
 Culberson   869782.0
-Dallam   837261515.0
+Dallam   843744431.0
 Dallas   527407.1622
 Dawson   8283379.3318
-Deaf Smith   472118235.664
+Deaf Smith   475501065.664
 Delta   879035.0
 Denton   35266237.1846
 DeWitt   5089318.6636
@@ -252,4 +252,4 @@ Yoakum   3986554.3318
 Young   14302115.6636
 Zapata   1563841.3318
 Zavala   8141588.3318
-net sum 0
+net sum 7067744986

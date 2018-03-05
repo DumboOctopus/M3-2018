@@ -12,7 +12,7 @@ def calculate_cost(amount, distance):
     # .37 dollar/ton/mile (truck) according to our source
     # 341 is the average cost per calorie for our food types
     print amount, distance
-    return 0.37 * distance * amount * 341
+    return 0.37 * distance * amount / 341
 
 
 distance_dp = {}

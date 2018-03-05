@@ -16,15 +16,15 @@ with open("food_production_county.tsv") as file:
         cattle = 0.095 * 974 * int(splitting[1])
         wheat = 0.14 * 179 * int(splitting[2])
         milk_cows = 0.052 * 13824 * int(splitting[3])
-        corn = 0.14 *268 * int(splitting[4])
-        sorghum = 0.14 *236 * int(splitting[5])
-        oats = 0.14 *155 * int(splitting[6])
-        rice = 0.14 *138 * int(splitting[7])
+        corn = 0.14 * 268 * int(splitting[4])
+        sorghum = 0.14 * 236 * int(splitting[5])
+        oats = 0.14 * 155 * int(splitting[6])
+        rice = 0.14 * 138 * int(splitting[7])
         soybean = 0.14 * 333 * int(splitting[8])
-        sunflower_oil = 0.17 * int(splitting[9])
+        sunflower_oil = 0.17 * 10.9 * int(splitting[9])
         sugarcan = .26 * 648 * int(splitting[10])
-        peanut = 0.17* 7.05 * int(splitting[11])
-        sunflower_nonoil = 0.17 * int(splitting[12])
+        peanut = 0.17 * 7.05 * int(splitting[11])
+        sunflower_nonoil = 0.17 * 10.9 * int(splitting[12])
 
 
         # total calories we can gain from not wasting this stuff at production
@@ -33,9 +33,11 @@ with open("food_production_county.tsv") as file:
         calories_wasted_by_retail = 0.0378 * groceries_in_this_county * 2231
         calories += calories_wasted_by_retail
 
-        net = int(calories) - int(c.execute("SELECT calories_needed from food_insecure_county where county= '{}'".format(county)).fetchone()[0])
 
-        query = "INSERT INTO county_net_food (county, net) VALUES('{}', {})".format(county, net)
+
+        net = int(calories) - int(c.execute("SELECT calories_needed from food_insecure_county where county= '{}'".format(county)).fetchone()[0])
+        sum_of_counties_nets += net
+        query = "INSERT INTO county_net_food (county, net, wasted_calories) VALUES('{}', {}, {})".format(county, net, calories)
         print query
         c.execute(query)
 
@@ -45,5 +47,5 @@ f.write("net sum " + str(sum_of_counties_nets))
 
 
 # remove this line so it doesn't actually add more stuff to db.
-#conn.commit()
+conn.commit()
 conn.close()

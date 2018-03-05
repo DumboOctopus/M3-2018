@@ -1,0 +1,28 @@
+Imperial County --> Los Angeles County : 298212.51828646497
+Imperial County --> Orange County : 235737.1446309844
+Imperial County --> Riverside County : 97347.51640010858
+Imperial County --> San Bernardino County : 215858.48066788595
+Imperial County --> San Diego County : 132454.68659941922
+Imperial County --> Santa Barbara County : 463723.8929849304
+Imperial County --> Ventura County : 378924.1867082707
+Los Angeles County --> Orange County : 73154.17909776392
+Los Angeles County --> Riverside County : 214748.637228223
+Los Angeles County --> San Bernardino County : 204275.4746515746
+Los Angeles County --> San Diego County : 189565.90533144624
+Los Angeles County --> Santa Barbara County : 167539.40445144553
+Los Angeles County --> Ventura County : 82065.15257899195
+Orange County --> Riverside County : 164303.67525694246
+Orange County --> San Bernardino County : 196898.7157415039
+Orange County --> San Diego County : 117913.29000512954
+Orange County --> Santa Barbara County : 229285.6124761052
+Orange County --> Ventura County : 146239.1572726563
+Riverside County --> San Bernardino County : 126433.57734081362
+Riverside County --> San Diego County : 106443.74190442488
+Riverside County --> Santa Barbara County : 382287.34098168253
+Riverside County --> Ventura County : 296812.3818635664
+San Bernardino County --> San Diego County : 211144.3853315201
+San Bernardino County --> Santa Barbara County : 354543.8935230684
+San Bernardino County --> Ventura County : 275777.44972686615
+San Diego County --> Santa Barbara County : 345392.3786939942
+San Diego County --> Ventura County : 263794.204541154
+Santa Barbara County --> Ventura County : 85483.5349736263
