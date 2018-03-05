@@ -50,6 +50,10 @@ public class DistanceCalculator {
                     pw.println(cities.get(i).getName() + " --> " + cities.get(j).getName() + " : " + distance);
                 }
             }
+
+            //closes the reader and writer
+            pw.close();
+            bf.close();
         }
         catch(IOException e){
             System.err.println("You dun goofed");
